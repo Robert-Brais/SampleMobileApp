@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *helloLabel;
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+- (IBAction)sayButtonClicked:(id)sender;
 
 
 @end
