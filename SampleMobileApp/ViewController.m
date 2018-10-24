@@ -21,5 +21,11 @@
 
 
 - (IBAction)sayButtonClicked:(id)sender {
+    NSString *name = self.nameField.text;
+    if(name.length == 0){
+        name = @"World";
+    }
+    NSString *greeting = [@"Hello " stringByAppendingFormat:@"%@!",name];
+    self.helloLabel.text = greeting;
 }
 @end

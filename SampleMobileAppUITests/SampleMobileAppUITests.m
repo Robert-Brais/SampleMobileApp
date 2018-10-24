@@ -30,9 +30,54 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
-- (void)testExample {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+- (void)testSayHelloWorld {
+    
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.buttons[@"Say Hello"] tap];
+    [app.staticTexts[@"Hello World!"] tap];
+    
+    
+}
+
+-(void) testSayHelloName{
+    
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [[[app.otherElements containingType:XCUIElementTypeStaticText identifier:@"Type your name..."] childrenMatchingType:XCUIElementTypeTextField].element tap];
+    
+    XCUIElement *shiftButton = app/*@START_MENU_TOKEN@*/.buttons[@"shift"]/*[[".keyboards.buttons[@\"shift\"]",".buttons[@\"shift\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/;
+    [shiftButton tap];
+    
+    XCUIElement *jKey = app/*@START_MENU_TOKEN@*/.keys[@"J"]/*[[".keyboards.keys[@\"J\"]",".keys[@\"J\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/;
+    [jKey tap];
+    
+    XCUIElement *aKey = app/*@START_MENU_TOKEN@*/.keys[@"a"]/*[[".keyboards.keys[@\"a\"]",".keys[@\"a\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/;
+    [aKey tap];
+    
+    XCUIElement *nKey = app/*@START_MENU_TOKEN@*/.keys[@"n"]/*[[".keyboards.keys[@\"n\"]",".keys[@\"n\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/;
+    [nKey tap];
+    
+    XCUIElement *eKey = app/*@START_MENU_TOKEN@*/.keys[@"e"]/*[[".keyboards.keys[@\"e\"]",".keys[@\"e\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/;
+    [eKey tap];
+    
+    XCUIElement *spaceKey = app/*@START_MENU_TOKEN@*/.keys[@"space"]/*[[".keyboards.keys[@\"space\"]",".keys[@\"space\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/;
+    [spaceKey tap];
+    [shiftButton tap];
+    
+    XCUIElement *dKey = app/*@START_MENU_TOKEN@*/.keys[@"D"]/*[[".keyboards.keys[@\"D\"]",".keys[@\"D\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/;
+    [dKey tap];
+    
+    XCUIElement *oKey = app/*@START_MENU_TOKEN@*/.keys[@"o"]/*[[".keyboards.keys[@\"o\"]",".keys[@\"o\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/;
+    [oKey tap];
+
+    [eKey tap];
+    
+    [app.buttons[@"Say Hello"] tap];
+    [app.staticTexts[@"Hello Jane Doe!"] tap];
+    
+    
 }
 
 @end
